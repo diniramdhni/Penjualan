@@ -4,10 +4,10 @@
 }
 html {
     font-family: "OpenSans", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    color: white;
+    color: #9badd5;
     font-size: 12px;
     height: 100%;
-    background-color: #F5E8C7;
+    background-color: #0e1122;
     font-weight: normal;
 }
 .main-body {
@@ -20,11 +20,11 @@ html {
     grid-template-areas: "menu top" "menu content" "menu bottom";
 }
 .main-body > nav {
-    background-color: #AC7088;
+    background-color: #131931;
     grid-area: menu;
 }
 .main-body > header {
-    background-color: #DEB6AB;
+    background-color: #202a45;
     grid-area: top;
     display: flex;
     justify-content:space-between;
@@ -47,7 +47,7 @@ html {
     padding: 20px;
 }
 .main-body > footer {
-    background-color: #DEB6AB;
+    background-color: #202a45;
     grid-area: bottom;
     display: block;
     padding: 0 25px;
@@ -119,7 +119,7 @@ html {
     grid-template-columns: 35px 1fr;
     align-items: center;
     text-decoration: none;
-    color: #C6F1A2;
+    color: #9badd5;
     padding: 18px 0 18px 25px;
     text-transform: capitalize;
 }
@@ -128,13 +128,13 @@ html {
     font-size: 18px;
 }
 .main-body > nav > a:hover {
-    background-color: #F5E8C7;
+    background-color: #0e1122;
     border-left: solid 2px #14acf8;
     padding-left: 23px;
     color: #14acf8;
 }
 .grid-container {
-    background-color: #DEB6AB;
+    background-color: #202a45;
     border-radius: 4px;
 }
 .grid-container table {
@@ -144,7 +144,7 @@ html {
     margin-top:15px;
 }
 .grid-container thead > tr {
-    background-color: #386bbb;
+    background-color: #182037;
     border-bottom: #3a466c solid 1px;
 }
 .grid-container th {
@@ -210,7 +210,7 @@ html {
     padding:15px;
 }
 .upsert-form {
-    background-color: #DEB6AB;
+    background-color: #202a45;
     box-sizing: border-box;
     width: 100%;
     border-radius: 4px;
@@ -225,14 +225,14 @@ html {
 [type=text], select, [type=date], [type=tel], [type=email], [type=number], [type=datetime-local] {
     border: none;
     outline: none;
-    color: #black;
+    color: #9badd5;
     display: inline-block;
     width: 250px;
     height: 30px;
     box-sizing: border-box;
     padding: 6px;
     font-size: 12px;
-    background-color: #F5E8C7;
+    background-color: #0e1122;
     border-radius: 4px;
     vertical-align: middle;
 }
@@ -249,14 +249,14 @@ html {
 textarea {
     border: none;
     outline: none;
-    color: black;
+    color: #9badd5;
     display: inline-block;
     width: 250px;
     height: 100px;
     box-sizing: border-box;
     padding: 6px;
     font-size: 12px;
-    background-color: #F5E8C7;
+    background-color: #0e1122;
     border-radius: 4px;
     resize:none;
 }
@@ -267,7 +267,7 @@ textarea {
     margin-right: 15px;
 }
 .bordered-filter {
-    border-bottom: solid #F5E8C7 1px;
+    border-bottom: solid #0e1122 1px;
     padding: 15px;
     margin-bottom: 15px;
 }
@@ -357,7 +357,7 @@ input[readonly] {
 }
 
 .authentication-wrapper > main {
-    background-color: #DEB6AB;
+    background-color: #202a45;
     padding: 40px;
     margin-top: 15px;
     border-radius: 6px;
@@ -384,8 +384,8 @@ input[readonly] {
     display: block;
     border: none;
     outline: none;
-    color: black;
-    background-color: #DEB6AB;
+    color: #9badd5;
+    background-color: #202a45;
     padding: 15px;
     border-bottom: 1px solid #14acf8;
     margin-bottom: 10px;
@@ -395,7 +395,7 @@ input[readonly] {
 }
 
 .authentication-wrapper > main button {
-    background: linear-gradient(to right, #d9e5e6, #6c2fbc);
+    background: linear-gradient(to right, #14acf8, #1481fa);
     color: white;
     cursor: pointer;
     text-transform: uppercase;
@@ -458,7 +458,7 @@ input[readonly] {
 [data-role="Salesman"] .salesman-detail .delete-button
 {
     cursor: not-allowed;
-    background: #a88890;
+    background: #636e72;
     color: black;
     opacity: 0.4;
 }
@@ -475,7 +475,7 @@ input[readonly] {
 }
 .popup-dialog {
     display: none; /*nanti setelah di-click akan jadi block*/
-    background-color: #DEB6AB;
+    background-color: #202a45;
     padding:20px;
     border-radius:6px;
     min-width:300px;
@@ -514,4 +514,82 @@ form.upsert-form td.combined-validation{
 .combined-validation .field-validation-error{
 	margin-bottom: 20px;
     margin-left: 0;
+}
+
+.grid-tiles .filter{
+    background-color:#202a45;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.grid-tiles .create-button{
+    margin-bottom:15px;
+    margin-left:0;
+}
+.grid-tiles .tiles-container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 350px 350px;
+}
+.grid-tiles .tile{
+    background-color:#202a45;
+    border-radius: 6px;
+    padding:15px;
+}
+.grid-tiles .tile .image-container{
+    background-color: black;
+    height: 145px;
+    text-align: center;
+    overflow: hidden;
+}
+.grid-tiles .tile img{
+    height: 145px;
+}
+.grid-tiles .tile .button-wrapper{
+    margin: 10px 0 20px 0;
+    display: flex;
+    gap:10px
+}
+.grid-tiles .tile .button-wrapper a{
+    width:50%;
+}
+.tile .name{
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align:center;
+}
+.tile .supplier{
+    font-size:14px;
+    margin-bottom:8px;
+    text-align:center;
+}
+.tile .category{
+    font-size:14px;
+    margin-bottom:12px;
+    text-align:center;
+}
+.tile .supplier::before{
+    content: 'Supplier: ';
+    color:#1481fa;
+}
+.tile .category::before{
+    content: 'Category: ';
+    color:#1481fa;
+}
+.tile .price{
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+}
+.grid-tiles .pagination{
+    background-color: #202a45;
+    border-radius: 6px;
+    margin-top: 15px;
+    padding: 15px;
+}
+.grid-tiles .pagination div:first-child{
+    font-size: 14px;
+    line-height: 26px;
 }
