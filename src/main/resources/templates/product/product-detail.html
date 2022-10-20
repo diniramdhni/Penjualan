@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{layout :: head}"></head>
+<body class="main-body" >
+<nav th:replace="~{layout :: navigation}"></nav>
+<header></header>
+<main>
+  <div class="grid-container course-detail">
+    <section class="header-info">
+      <div><span style="font-size: 30px" th:text="${grid.name}"></span></div>
+      <div>
+        <span th:if="${grid.discount} == 0" style="font-size: 10px;"> </span>
+        <span th:if="${grid.discount} != 0" style="text-decoration: line-through white; font-size: 10px" th:text="${grid.priceRupiah}"></span>
+      </div>
+      <div><span th:text=${grid.priceAfterDiscountRupiah}></span></div>
+      <div>Dimension: <span th:text=${grid.dimension}></span></div>
+      <div>Price Unit: <span th:text=${grid.unit}></span></div>
+    </section>
+
+    <a th:href="@{/product/buy(code=${grid.code})}"  class="blue-button detail-button">Buy</a>
+
+  </div>
+</main>
+<footer th:replace="~{layout :: footer}"></footer>
+<th:block th:replace="~{layout :: javascript}"></th:block>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{layout :: head}"></head>
+<body class="main-body" >
+<nav th:replace="~{layout :: navigation}"></nav>
+<header th:replace="~{layout :: header (${breadCrumbs})}"></header>
+<main>
+    <div class="grid-container category-detail">
+        <table>
+            <thead>
+            <tr>
+                <th>Transaction</th>
+                <th>User</th>
+                <th>Total</th>
+                <th>Date</th>
+                <th>Item</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="transaction : ${grid}" th:object="${transaction}">
+                <td th:text="${transaction.codeNumber}"></td>
+                <td th:text="${transaction.user}"></td>
+                <td th:text="${transaction.totalRupiah}"></td>
+                <td th:text="${transaction.date}"></td>
+                <td th:text="${transaction.product}"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5">
+                    <div class="pagination">
+                        <div th:text="|page ${currentPage} of ${totalPages}|"></div>
+                        <div>
+                            <a th:each="loop:${#numbers.sequence(1,totalPages)}"
+                               th:href="@{/transaction/index(page=${loop})}"
+                               th:text="${loop}"></a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</main>
+<footer th:replace="~{layout :: footer}"></footer>
+<th:block th:replace="~{layout :: javascript}"></th:block>
+</body>
+</html>

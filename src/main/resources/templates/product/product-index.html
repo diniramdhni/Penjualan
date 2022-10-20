@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{layout :: head}"></head>
+<body class="main-body">
+<nav th:replace="~{layout :: navigation}"></nav>
+<header th:replace="~{layout :: header (${breadCrumbs})}"></header>
+<main>
+    <div class="grid-container customer-index">
+        <form method="get" class="filter" th:attr="action=@{/product/index}">
+            <input type="text" name="name" placeholder="Name..." th:attr="value=${name}">
+            <button class="blue-button" type="submit">Search</button>
+        </form>
+        <div class="grid-container region-detail" th:each="product: ${grid}">
+            <section class="header-info">
+                <div><span style="font-size: 30px" th:text="${product.name}"></span></div>
+                <div>
+                    <span th:if="${product.discount} == 0" style="font-size: 10px;"> </span>
+                    <span th:if="${product.discount} != 0" style="text-decoration: line-through white; font-size: 10px" th:text="${product.priceRupiah}"></span>
+                </div>
+                <div><span style="font-size: 20px" th:text="${product.priceAfterDiscountRupiah}"></span></div>
+                <div>
+                    <a th:href="@{/product/detail(code=${product.code})}" class="blue-button update-button">Buy</a>
+                </div>
+            </section>
+        </div>
+        <div>
+            <div class="pagination">
+                <div th:text="|page ${currentPage} of ${totalPages}|"></div>
+                <div>
+                    <a th:each="loop:${#numbers.sequence(1,totalPages)}"
+                       th:href="@{/product/index(page=${loop},name=${name})}"
+                       th:text="${loop}"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<footer th:replace="~{layout :: footer}"></footer>
+<th:block th:replace="~{layout :: javascript}"></th:block>
+</body>
+</html>
